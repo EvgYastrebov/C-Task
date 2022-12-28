@@ -3,8 +3,9 @@
 
 int main()
 {
-  BigInt x1("987654321000000000");
+  std::string s1("987654321000000000");
   std::string s2("123456789000000000");
+  BigInt x1(s1);
   BigInt x2(s2);
 
   std::cout << "Examples:" << '\n' << '\n';
@@ -42,10 +43,10 @@ int main()
   std::cout << '\n';
 
   std::cout << '\n' << "Small Fractions:" << '\n';
-  BigInt x12("5");
-  BigInt x13("2");
-  BigInt x14("4");
-  BigInt x15("7");
+  BigInt x12(2);
+  BigInt x13(5);
+  BigInt x14(4);
+  BigInt x15(7);
   Fraction f7(x12, x13);
   Fraction f8(x14, x15);
 
