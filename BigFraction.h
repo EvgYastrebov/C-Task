@@ -1,7 +1,7 @@
 #include <BigInt.h>
 
 //Реализация для несократимых дробей.
-struct Fraction : public BigInt {
+struct Fraction {
   // Числитель.
   BigInt numenator;
   // Знаменатель.
