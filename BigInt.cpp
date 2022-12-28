@@ -5,7 +5,7 @@
 #include <stdexcept>
 
 // Создание длинного числа из строки.
-BigInt::BigInt(std::string s) {
+BigInt::BigInt(std::string& s) {
   for (int i = (int)s.length(); i > 0; i -= 9)
     if (i < 9) digits.push_back(atoi(s.substr(0, i).c_str()));
     else digits.push_back(atoi(s.substr(i - 9, 9).c_str()));
@@ -76,8 +76,27 @@ BigInt& BigInt::operator+=(const BigInt& right) {
   return *this = (*this + right);
 }
 
+
+// Префиксный инкремент.
 const BigInt BigInt::operator++() {
-    return (*this += 1);
+  return *this += 1;
+}
+
+// Постфиксный инкремент.
+const BigInt BigInt::operator++(int) {
+  *this += 1;
+  return *this - 1;
+}
+
+// Префиксный декремент.
+const BigInt BigInt::operator--() {
+  return *this -= 1;
+}
+
+// Постфиксный декремент.
+const BigInt BigInt::operator--(int) {
+  *this -= 1;
+  return *this + 1;
 }
 
 // Вычитание для длинных чисел.
