@@ -163,7 +163,7 @@ const BigInt operator/(const BigInt& left, const BigInt& right) {
     return result;
   }
   if (left == right) {
-    result = BigInt("1");
+    result = BigInt(1);
     return result;
   }
 
