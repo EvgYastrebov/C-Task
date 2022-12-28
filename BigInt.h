@@ -11,7 +11,7 @@ class BigInt {
         
   // Конструкторы.
   BigInt() {digits.push_back(0);};
-  BigInt(std::string);
+  BigInt(std::string&);
   BigInt(unsigned int);
 
   friend bool operator==(const BigInt&, const BigInt&);
@@ -27,6 +27,10 @@ class BigInt {
   friend const BigInt operator%(const BigInt&, const BigInt&);
 
   const BigInt operator++();
+  const BigInt operator++(int);
+  const BigInt operator--();
+  const BigInt operator--(int);
+  
   BigInt& operator=(const BigInt&);
   BigInt& operator+=(const BigInt&);
   BigInt& operator-=(const BigInt&);
